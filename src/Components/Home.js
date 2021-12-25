@@ -10,12 +10,19 @@ const Home = () => {
       const newBlogs = blogs.filter(blog=>blog.id !== id);
         setBlogs(newBlogs);
     }
+
+    const [name,setName] = useState('aitan');
+
+
     useEffect(()=>{
       console.log('useEffect ran');
-    });
+      console.log(name);
+    },[name]);
     return (
       <div className="home">
         <BlogList blogs = {blogs} title ='All Blogs' handleDelete={handleDelete}/>
+        <button onClick={()=>setName('ali')}>change name</button>
+        <p>{name}</p>
       </div>
     );
   }
