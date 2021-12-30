@@ -91,6 +91,10 @@
   box-sizing: border-box;
   display: block;
 }
+.create textarea{
+  resize: none;
+  height: 200px;
+}
 .create button {
   background: #05036b;
   color: #fff;
