@@ -8,6 +8,10 @@ const Create = () => {
     const [isPending, setIsPending] = useState(false);
     const history = useHistory();
 
+    const Image =(e)=>{
+        const file = e.target.files[0];
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const blog = { title, body, author };
@@ -40,6 +44,16 @@ const Create = () => {
                 value={body}
                 onChange={(e)=>setBody(e.target.value)}
                 ></textarea>
+                <label>Blog Image:</label>
+
+                <input
+                    type="file"
+                    accept="image/*"
+                    required
+                    // value = {image}
+                    onChange={Image}
+                />
+                
                 <label>Blog author:</label>
                 <input 
                 type="text" 
